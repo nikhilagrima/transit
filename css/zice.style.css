@@ -16,10 +16,10 @@ body {
 body.error {
 	background-image: url(../images/bg/pick_bg.error.jpg);
 }
-body.dashborad {
+/*body.dashborad {
 	background-image: url(../images/menu_bg.jpg);
 	background-repeat: repeat-y;
-}
+}*/
 body.nobg {
 	background-image: none;
 	background-repeat: repeat-y;
@@ -3368,7 +3368,7 @@ border-radius:35px;
 		  z-index: 48;
 		  background-color:#1f1f1f;
 	  }
-	  body.dashborad { background-image: url(../images/menu_small_bg.jpg); background-repeat: repeat-y; }
+	  /*body.dashborad { background-image: url(../images/menu_small_bg.jpg); background-repeat: repeat-y; }*/
 	  form div.section > div {margin-left: 0%;}
 	  form div.section > label {float: none;width: 100%;display:block;}
 	  #text h1 {font-size:40px;}
