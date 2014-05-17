@@ -1,4 +1,4 @@
-transit
+Transit
 =======
 
 a dynamic app
