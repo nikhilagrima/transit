@@ -79,7 +79,20 @@
 		<script type="text/javascript" src="components/elastic/jquery.elastic.source.js"></script>
         <script type="text/javascript" src="js/jquery.cookie.js"></script>
         <script type="text/javascript" src="js/zice.custom.js"></script>    
-   
+    <script type="text/javascript">
+        function allowDrop(ev) {
+            ev.preventDefault();
+        }
+
+        function drag(ev) {
+            ev.dataTransfer.setData("Text", ev.target.id);
+        }
+        function drop(ev) {
+            ev.preventDefault();
+            var data = ev.dataTransfer.getData("Text");
+            ev.target.appendChild(document.getElementById(data));
+        }
+    </script>
            
         </head>        
         <body class="dashborad">        
@@ -99,7 +112,7 @@
                    <ul  id="main_menu" class="main_menu" style="overflow:auto;height:700px">
                        <h3 style="color:white"> Header</h3>
                    <li class="limenu" >
-                       <div class="itempad"  style="padding-top:1%;background-color:#1d1c1c">
+                       <div id="drag1" draggable="true" ondragstart="drag(event)" class="itempad"  style="padding-top:1%;background-color:#1d1c1c">
                        <div style="float:left"> <img  style="width:25px" src="images/openFiles.png" /></div>
                        <div style="display:inline"><input style="width:140px;background-color:transparent;border:none;color:white"/></div>
                        <div style="float:right"> <img style="width:25px;height:20px" src="images/error.png"</div>
@@ -108,13 +121,13 @@
                    </li>
                        <h3 style="color:white"> Image</h3>
                    <li class="limenu" >
-                       <div class="itempad"  style="width:300px; height:400px">
-                       <img style="width:300px;height:400px" src="images/Bangalore-45.png" />
+                       <div  class="itempad"  style="width:300px; height:400px">
+                       <img id="drag2" draggable="true" ondragstart="drag(event)" style="width:300px;height:400px" src="images/Bangalore-45.png" />
                        </div>
                    </li>
                        <h3 style="color:white">Footer</h3>
                        <li class="limenu" >  
-                           <div class="itempad" style="padding-top:1%;background-color:#0997de">
+                           <div id="drag3" draggable="true" ondragstart="drag(event)" class="itempad" style="padding-top:1%;background-color:#0997de">
                                <div style="float:left">
                                <h3 style="color:#0561f2">Price</h3>
                                <input style="background-color:blue;color:white;height:100px;outline:none;border:none" />
@@ -131,7 +144,9 @@
             
             <div id="content" >
                 <img style="height:574px;padding-left:90px;padding-top:50px" src="images/phone.png" />
-                <div style="background-color:red;width:233px;height:413px;margin-left:145px; position: absolute;top: 0px;margin-top:124px"></div>
+                <div id="div1" ondrop="drop(event)" ondragover="allowDrop(event)" style="background-color:red;width:233px;height:413px;margin-left:145px; position: absolute;top: 0px;margin-top:124px">
+
+                </div>
               </div> <!--// End content --> 
 </body>
 </html>
