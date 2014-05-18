@@ -9,6 +9,6 @@
     <string name="transit">Transit</string>
     <string name="title_activity_home_screen">HomeScreen</string>
     <string name="title_activity_main">MainActivity</string>
-    <string name="scan_qr">Scan QR</string>
+    <string name="scan_qr">Scan</string>
 
 </resources>
