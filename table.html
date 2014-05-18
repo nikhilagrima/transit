@@ -90,10 +90,26 @@
                            .get();
                 var ida = $("#div1")
                              .find("input")
-                             .map(function () { return d = this.id + "," + this.value; }) //Project Ids
+                             .map(function () { return d =  this.value; }) //Project Ids
                              .get();
-                alert(idarray);
-                alert(ida);
+                var img = $("#div1")
+                            .find("img")
+                            .map(function () { return d = this.id; }) //Project Ids
+                            .get();
+                //alert(ida);
+                var newidarry = idarray.filter(function (v) { return v !== '' });
+                var newida = ida.filter(function (v) { return v !== '' });
+                //var ftr = newida.filter(function (v) { return v !== '' });
+                //alert(ftr);
+                var newimg = img.filter(function (v) { return v !== '' });
+                
+                var jsonfile = JSON.stringify({ "store_id": "store-1001", "type": "list", "header_title": newidarry, "heder_color": "#1d1c1c", "body_1": newimg, "body_2": newida })
+                alert(jsonfile);
+                var elem = "http://www.agrimainfotech.com/transit/qr.php?q=" + jsonfile;
+
+                $.get(elem, function (data) {
+                    $("#display").html(data);
+                });
                 });
             // var myJsonString = JSON.stringify(ida);
         });
@@ -241,6 +257,9 @@
 
                 </div>
                 <button style="width:200px;height:50px;background-color:cadetblue;color:white" >Get ID</button>
-              </div> <!--// End content --> 
+              </div>
+            <div id="display" style="margin-left:700px;margin-top:-300px">
+                
+            </div> <!--// End content --> 
 </body>
 </html>
