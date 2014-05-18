@@ -78,7 +78,27 @@
         <script type="text/javascript" src="components/highlightText/highlightText.js"></script>
 		<script type="text/javascript" src="components/elastic/jquery.elastic.source.js"></script>
         <script type="text/javascript" src="js/jquery.cookie.js"></script>
-        <script type="text/javascript" src="js/zice.custom.js"></script>    
+        <script type="text/javascript" src="js/zice.custom.js"></script>   
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script> 
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $("button").click(function () {
+                var d;
+                var idarray = $("#div1")
+                           .find("div")
+                           .map(function () { return d = this.id; }) //Project Ids
+                           .get();
+                var ida = $("#div1")
+                             .find("input")
+                             .map(function () { return d = this.id + "," + this.value; }) //Project Ids
+                             .get();
+                alert(idarray);
+                alert(ida);
+                });
+            // var myJsonString = JSON.stringify(ida);
+        });
+</script>
+
     <script type="text/javascript">
         function allowDrop(ev) {
             ev.preventDefault();
@@ -160,55 +180,55 @@
                    </li>
                        <h3 style="color:white"> Image</h3>
                    <li class="limenu" >
-                       <div  class="itempad"  style="width:auto;">
+                       <div id="img1" class="itempad"  style="width:auto;">
                        <img id="Image1"draggable="true" ondragstart="drag(event)" style="width:233px;" src="images/offer_1.png" />
                        </div>
                    </li>
                        <li>
-                           <div class="itempad" style="width:auto">
+                           <div id="img2"  class="itempad" style="width:auto">
                                <img id="Image2" draggable="true" ondragstart="drag(event)" src="images/offer_2.png" style="width:233px;"
 
                            </div>
                        </li>
                         <li>
-                           <div class="itempad" style="width:auto">
+                           <div id="img3"  class="itempad" style="width:auto">
                                <img id="Image3" draggable="true" ondragstart="drag(event)" src="images/offer_3.png" style="width:233px;" />
 
                            </div>
                        </li>
                        <h3 style="color:white">Tags</h3>
                        <li class="limenu" >  
-                          <div  class="itempad" style="width:210px">
+                          <div id="tag1"  class="itempad" style="width:210px">
                               <!--<h3 style="color:blue">Price</h3>--> 
                                <input id="Footer1" draggable="true" ondragstart="drag(event)" style="width:100%;height:80px;background-color:#03229c;border:none;color:white;text-align:center;font-size:30px" value="Price: " />
                            </div>
                        </li>
                        <li class="limenu" >  
-                          <div  class="itempad" style="width:210px">
+                          <div id="tag2"  class="itempad" style="width:210px">
                               <!--<h3 style="color:#0166a0">Offer</h3>-->
                                <input id="Footer2" draggable="true" ondragstart="drag(event)" style="width:100%;height:80px;background-color:#0166a0;border:none;color:white;text-align:center;font-size:30px   " value="Offer: " />
                            </div>
                        </li>
                         <li class="limenu" >  
-                          <div  class="itempad" style="width:210px">
+                          <div id="tag3"  class="itempad" style="width:210px">
                               <!--<h3 style="color:blue">Price</h3>--> 
                                <input id="Footer3" draggable="true" ondragstart="drag(event)" style="width:100%;height:80px;background-color:#fe4646;border:none;color:white;text-align:center;font-size:30px" value="Price: " />
                            </div>
                        </li>
                        <li class="limenu" >  
-                          <div  class="itempad" style="width:210px">
+                          <div id="tag4"  class="itempad" style="width:210px">
                               <!--<h3 style="color:#0166a0">Offer</h3>-->
                                <input id="Footer4" draggable="true" ondragstart="drag(event)" style="width:100%;height:80px;background-color:#dc0202;border:none;color:white;text-align:center;font-size:30px   " value="Offer: " />
                            </div>
                        </li>
                        <li class="limenu" >  
-                          <div  class="itempad" style="width:210px">
+                          <div id="tag5"  class="itempad" style="width:210px">
                               <!--<h3 style="color:blue">Price</h3>--> 
                                <input id="Footer5" draggable="true" ondragstart="drag(event)" style="width:100%;height:80px;background-color:#37bb18;border:none;color:white;text-align:center;font-size:30px" value="Price: " />
                            </div>
                        </li>
                        <li class="limenu" >  
-                          <div  class="itempad" style="width:210px">
+                          <div id="tag6"  class="itempad" style="width:210px">
                               <!--<h3 style="color:#0166a0">Offer</h3>-->
                                <input id="Footer6" draggable="true" ondragstart="drag(event)" style="width:100%;height:80px;background-color:#058517;border:none;color:white;text-align:center;font-size:30px   " value="Offer: " />
                            </div>
@@ -220,7 +240,7 @@
                 <div id="div1" ondrop="drop(event)" ondragover="allowDrop(event)" style="background-color:white;width:233px;height:413px;margin-left:145px; position: absolute;top: 0px;margin-top:124px">
 
                 </div>
-                <button style="width:200px;height:50px" onclick="button_click();"></button>
+                <button style="width:200px;height:50px;background-color:cadetblue;color:white" >Get ID</button>
               </div> <!--// End content --> 
 </body>
 </html>
